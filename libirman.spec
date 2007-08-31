@@ -2,7 +2,7 @@
 
 Name:		libirman
 Version:	0.4.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Library for accessing the IRMAN hardware
 License:	GPL
 Group:		System/Libraries
@@ -51,5 +51,3 @@ rm -rf $RPM_BUILD_ROOT/
 %defattr(-,root,root)
 %{_libdir}/*.a
 %{_includedir}/*
-
-

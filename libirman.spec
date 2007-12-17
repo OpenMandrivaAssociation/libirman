@@ -8,7 +8,6 @@ License:	GPL
 Group:		System/Libraries
 URL:		http://www.evation.com/libirman/
 Source0:	http://lirc.sourceforge.net/software/snapshots/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 General purpose library for programs to use in order to receive infra

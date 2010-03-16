@@ -2,7 +2,7 @@
 
 Name:		libirman
 Version:	0.4.4
-Release:	%mkrel 5
+Release:	%mkrel 6
 Summary:	Library for accessing the IRMAN hardware
 License:	GPL
 Group:		System/Libraries

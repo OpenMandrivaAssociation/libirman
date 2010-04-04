@@ -1,53 +1,70 @@
-%define lib_name	%name
+%define	major	0
+%define libname 	%mklibname irman %major
+%define develname	%mklibname irman -d
 
 Name:		libirman
-Version:	0.4.4
-Release:	%mkrel 6
+Version:	0.4.5
+Release:	%mkrel 1
 Summary:	Library for accessing the IRMAN hardware
 License:	GPL
 Group:		System/Libraries
-URL:		http://www.evation.com/libirman/
-Source0:	http://lirc.sourceforge.net/software/snapshots/%{name}-%{version}.tar.bz2
+URL:		http://sourceforge.net/projects/lirc/files/
+Source0:	http://downloads.sourceforge.net/project/lirc/libirman/%{version}/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Requires:	%{libname} = %{version}-%{release}
 
 %description
 General purpose library for programs to use in order to receive infra
 red signals via irman compatible hardware. It is designed to be portable
 across Unices but is so far only known to work under Linux.
 
-%package -n %{lib_name}-devel
-Summary:  Header files and static library for development with libirman
-Group: Development/C
-Provides: %{lib_name}-static-devel = %{version}-%{release}
+%package -n %{libname}
+Group: System/Libraries
+Summary: Library for accessing the IRMAN hardware
 
-%description -n %{lib_name}-devel
-This package includes the static libraries and header
+%description -n %{libname}
+General purpose library for programs to use in order to receive infra
+red signals via irman compatible hardware. It is designed to be portable
+across Unices but is so far only known to work under Linux.
+
+%package -n %{develname}
+Summary:  Header files and development library for development with libirman
+Group: Development/C
+Requires: %{libname} = %{version}-%{release}
+Provides: %{name}-devel = %{version}-%{release}
+Provides: irman-devel = %{version}-%{release}
+Obsoletes: lib%{name}-devel < 0.4.5
+
+%description -n %{develname}
+This package includes the development libraries and header
 files for the libirman package.
 
 %prep
 %setup -q
 
 %build
-%configure
+%configure2_5x --disable-static
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-# Makefile doesn't create this:
-install -d $RPM_BUILD_ROOT/%{_includedir}
-%makeinstall
+%makeinstall_std
 
 %clean
 rm -rf $RPM_BUILD_ROOT/
 
 %files
 %defattr(-,root,root)
-%doc COPYING COPYING.lib INSTALL NEWS README TECHNICAL TODO
+%doc COPYING COPYING.lib NEWS README TECHNICAL TODO
 %config(noreplace) %_sysconfdir/irman.conf
 %{_bindir}/*
 
-%files -n %{lib_name}-devel
+%files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.a
+%{_libdir}/*.so.%{major}*
+
+%files -n %{develname}
+%defattr(-,root,root)
+%{_libdir}/*.la
+%{_libdir}/*.so
 %{_includedir}/*

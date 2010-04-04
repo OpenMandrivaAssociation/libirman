@@ -4,7 +4,7 @@
 
 Name:		libirman
 Version:	0.4.5
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Library for accessing the IRMAN hardware
 License:	GPL
 Group:		System/Libraries
@@ -33,7 +33,7 @@ Group: Development/C
 Requires: %{libname} = %{version}-%{release}
 Provides: %{name}-devel = %{version}-%{release}
 Provides: irman-devel = %{version}-%{release}
-Obsoletes: lib%{name}-devel < 0.4.5
+Obsoletes: libirman-devel < 0.4.5
 
 %description -n %{develname}
 This package includes the development libraries and header

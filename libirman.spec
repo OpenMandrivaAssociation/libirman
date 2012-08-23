@@ -65,6 +65,5 @@ rm -rf %{buildroot}/
 
 %files -n %{develname}
 %defattr(-,root,root)
-%{_libdir}/*.la
 %{_libdir}/*.so
 %{_includedir}/*

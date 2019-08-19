@@ -4,12 +4,12 @@
 
 Summary:	Library for accessing the IRMAN hardware
 Name:		libirman
-Version:	0.4.5
-Release:	14
+Version:	0.5.2
+Release:	1
 License:	GPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/lirc/files/
-Source0:	http://downloads.sourceforge.net/project/lirc/libirman/%{version}/%{name}-%{version}.tar.bz2
+Source0:	https://sourceforge.net/projects/libirman/files/%{version}/%{name}-%{version}.tar.gz
 
 %description
 General purpose library for programs to use in order to receive infra
@@ -55,4 +55,5 @@ files for the libirman package.
 %files -n %{devname}
 %{_libdir}/*.so
 %{_includedir}/*
+%{_libdir}/pkgconfig/libirman.pc
 

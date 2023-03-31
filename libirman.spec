@@ -5,7 +5,7 @@
 Summary:	Library for accessing the IRMAN hardware
 Name:		libirman
 Version:	0.5.2
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/lirc/files/

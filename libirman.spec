@@ -8,7 +8,7 @@ Version:	0.5.2
 Release:	2
 License:	GPLv2
 Group:		System/Libraries
-Url:		http://sourceforge.net/projects/lirc/files/
+Url:		https://sourceforge.net/projects/lirc/files/
 Source0:	https://sourceforge.net/projects/libirman/files/%{version}/%{name}-%{version}.tar.gz
 
 %description

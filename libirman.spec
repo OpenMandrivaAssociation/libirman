@@ -11,6 +11,11 @@ Group:		System/Libraries
 Url:		https://sourceforge.net/projects/lirc/files/
 Source0:	https://sourceforge.net/projects/libirman/files/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 General purpose library for programs to use in order to receive infra
 red signals via irman compatible hardware. It is designed to be portable
